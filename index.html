@@ -12,8 +12,8 @@
   :root{
     --bg:#0c0d12; --panel:#16181f; --panel2:#1d2029; --line:#2a2e3a;
     --txt:#f4f5f7; --mut:#9aa0ad;
-    --bol:#f5a623; --bol-d:#3a2c12;      /* warm = Bolero */
-    --rhu:#27c4c4; --rhu-d:#0e3030;      /* cool = Rumba */
+    --bol:#f5a623; --bol-d:#3a2c12;
+    --rhu:#27c4c4; --rhu-d:#0e3030;
     --end:#e9c46a;
     --accent:#ff5d8f;
   }
@@ -37,38 +37,41 @@
     background:var(--panel); border:1px solid var(--line);
     transition:background .25s, border-color .25s;
   }
-  @media(min-width:760px){ .nowcard{ padding:34px 40px; min-height:46vh; display:flex; flex-direction:column; justify-content:center; } }
+  @media(min-width:760px){ .nowcard{ padding:32px 38px; min-height:44vh; display:flex; flex-direction:column; justify-content:center; } }
   .nowcard .badges{display:flex; gap:9px; align-items:center; flex-wrap:wrap;}
   .pill{font-size:13px; font-weight:700; letter-spacing:.6px; padding:6px 13px; border-radius:999px; text-transform:uppercase;}
   .pill.style{color:#0c0d12;}
   .pill.phrase{background:#00000035; color:var(--txt); border:1px solid var(--line);}
-  .nowcard h2{font-size:clamp(42px,9vw,84px); line-height:1.0; margin:14px 0 14px; font-weight:800;}
+  .nowcard h2{font-size:clamp(40px,8.5vw,80px); line-height:1.0; margin:14px 0 14px; font-weight:800;}
   .moves{display:flex; flex-direction:column; align-items:stretch; gap:8px; margin-top:8px;}
-  .move{font-size:clamp(18px,3vw,28px); padding:10px 16px 10px 16px; border-radius:12px; background:var(--panel2); border:1px solid var(--line); border-left:5px solid var(--bol); color:var(--txt); font-weight:600; display:flex; align-items:center; gap:12px;}
+  .move{font-size:clamp(18px,3vw,28px); padding:10px 16px; border-radius:12px; background:var(--panel2); border:1px solid var(--line); border-left:5px solid var(--bol); color:var(--txt); font-weight:600; display:flex; align-items:center; gap:12px;}
   .move .mn{font-size:.62em; color:var(--mut); font-weight:700; min-width:1.4em; text-align:right; font-variant-numeric:tabular-nums;}
   .move.hl{border-color:var(--accent); border-left-color:var(--accent); color:#fff; background:#3a1320;}
 
   .countcard{
-    border-radius:18px; padding:12px 16px; background:var(--panel); border:1px solid var(--line);
-    display:flex; flex-direction:row; align-items:center; gap:16px; flex-wrap:wrap;
+    border-radius:18px; padding:14px 16px; background:var(--panel); border:1px solid var(--line);
+    display:flex; flex-direction:column; gap:10px;
   }
-  .countmeta{display:flex; flex-direction:column; gap:3px; min-width:116px;}
-  .countmeta.right{align-items:flex-end; margin-left:auto; text-align:right;}
-  .countrow{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .countcard .crow{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
   .label{font-size:12px; color:var(--mut); text-transform:uppercase; letter-spacing:.8px;}
-  .patname{font-size:13px; font-weight:700;}
-  .beats{display:flex; gap:7px; justify-content:space-between; min-height:54px; flex:1; min-width:230px;}
+  .patname{font-size:14px; font-weight:700;}
+  select{font-family:inherit; font-size:14px; font-weight:600; color:var(--txt); background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:8px 10px;}
+  .beats{display:flex; gap:8px; justify-content:flex-start; min-height:66px;}
   .beat{
-    flex:1; min-width:0; aspect-ratio:1/1; max-height:54px; display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto; min-width:64px; padding:6px 4px; display:flex; flex-direction:column; align-items:center; justify-content:center;
     border-radius:13px; background:var(--panel2); border:1px solid var(--line);
-    font-size:clamp(18px,4vw,30px); font-weight:800; color:var(--mut);
-    transition:transform .05s ease, background .05s, color .05s, border-color .05s;
+    color:var(--mut); transition:transform .05s ease, background .05s, color .05s, border-color .05s;
   }
-  .beat.quick{font-size:clamp(14px,3vw,20px); flex:.65;}
-  .beat.on{background:var(--accent); color:#fff; transform:scale(1.09); border-color:var(--accent); box-shadow:0 0 22px #ff5d8f66;}
+  .beat .bl{font-size:clamp(20px,4vw,30px); font-weight:800; line-height:1;}
+  .beat .sub{font-size:11px; color:var(--mut); margin-top:3px; font-variant-numeric:tabular-nums;}
+  .beat.quick{min-width:50px;}
+  .beat.quick .bl{font-size:clamp(15px,3vw,22px);}
+  .beat.on{background:var(--accent); color:#fff; transform:scale(1.07); border-color:var(--accent); box-shadow:0 0 22px #ff5d8f66;}
+  .beat.on .sub{color:#fff;}
+  .beat.ci{flex:1; min-width:0;}
   .nextline{font-size:14px; color:var(--mut);}
   .nextline b{color:var(--txt);}
-  .countdown{font-variant-numeric:tabular-nums; font-weight:800; color:var(--accent);}
+  .countdown{font-variant-numeric:tabular-nums; font-weight:800; color:var(--accent); margin-left:auto;}
 
   .clock{display:flex; align-items:center; gap:12px; margin:14px 0 6px;}
   .clock .t{font-variant-numeric:tabular-nums; font-size:14px; color:var(--mut); min-width:96px;}
@@ -133,14 +136,14 @@
     </div>
 
     <div class="countcard">
-      <div class="countmeta">
+      <div class="crow">
         <span class="label">Count</span>
-        <span class="patname" id="patName">Bolero · slow 1–2</span>
+        <select id="countSel"></select>
+        <span class="countdown" id="countdown">—</span>
       </div>
       <div class="beats" id="beats"></div>
-      <div class="countmeta right">
+      <div class="crow">
         <span class="nextline" id="nextline">Next: —</span>
-        <span class="countdown" id="countdown">—</span>
       </div>
     </div>
   </div>
@@ -152,10 +155,10 @@
 
   <div class="timeline" id="timeline"></div>
   <div class="tlkey">
-    <span><span class="dot" style="background:var(--bol)"></span>BOL — Bolero (slow 1–2)</span>
-    <span><span class="dot" style="background:var(--rhu)"></span>RHU — Rumba (quick 1 2 3 a)</span>
+    <span><span class="dot" style="background:var(--bol)"></span>BOL — Bolero (Slow Quick Quick)</span>
+    <span><span class="dot" style="background:var(--rhu)"></span>RHU — Rumba (Slow Quick Quick, on 2)</span>
     <span><span class="dot" style="background:var(--end)"></span>Finish / Outro</span>
-    <span>· Tap any block to jump</span>
+    <span>· Tap a block to jump</span>
   </div>
 
   <div class="transport">
@@ -168,7 +171,7 @@
   </div>
   <div class="transport">
     <button class="btn" id="loopBtn">🔁 Loop section: <b id="loopState">Off</b></button>
-    <button class="btn" id="countInBtn">🕐 Count-in: <b id="ciState">Off</b></button>
+    <button class="btn" id="countInBtn">🕒 Count-in 5-6-7-8: <b id="ciState">Off</b></button>
     <button class="btn" id="metroBtn">🔊 Click: <b id="metroState">Off</b></button>
   </div>
 
@@ -181,7 +184,7 @@
         <button class="btn" id="bpmUp">+</button>
         <button class="btn" id="tap">👆 Tap tempo</button>
       </div>
-      <div class="hint">The meter auto-switches: <b>Bolero</b> shows a slow <b>1–2</b>, <b>Rumba</b> shows a quicker <b>1 2 3 a</b>. One tempo drives both. If it drifts, press <b>Sync</b> on a strong “1”.</div>
+      <div class="hint">The count locks to 4-beat bars. Pick the <b>Count</b> style above to match your instructor — it remembers a choice for Bolero and for Rumba separately. If it drifts, press <b>Sync</b> on a strong “1”.</div>
     </div>
     <div class="ctl">
       <h3>Align the count</h3>
@@ -189,7 +192,7 @@
         <button class="btn" id="sync">🎯 Sync “1” now</button>
         <button class="btn" id="syncStart">Reset to song start</button>
       </div>
-      <div class="hint">Turn on the audible <b>Click</b> to hear the count while you find the groove, then turn it off for the real run-through.</div>
+      <div class="hint">Turn on <b>Count-in 5-6-7-8</b> and the app counts you in before Play and before every loop restart, instead of starting cold. Use <b>Click</b> to hear the beat.</div>
     </div>
   </div>
 
@@ -209,7 +212,7 @@
 <script>
 (function(){
   "use strict";
-  // ---------- DATA (instructor's whiteboard, timed to this recording) ----------
+  // ---------- DATA (instructor's whiteboard, timed to this 3:24 recording) ----------
   var SONG_END = 203.8;
   var SECTIONS = [
     {t:0,   style:"BOL", phrase:"Intro",             title:"Walk In",        moves:["Walk in"]},
@@ -223,65 +226,78 @@
     {t:169, style:"RHU", phrase:"Chorus 2 · Finish", title:"Finish",         moves:["1× 4 Walls","18 Stepper","Orbit","Cuddle","Flick-out","Rev flick","DIP ‼️"]},
     {t:198, style:"END", phrase:"Outro",             title:"Hold the Dip 🎉",moves:["Hold & smile — song plays out"]}
   ];
-  for(var i=0;i<SECTIONS.length;i++){ SECTIONS[i].end = (i<SECTIONS.length-1)? SECTIONS[i+1].t : SONG_END; }
+  for(var i=0;i<SECTIONS.length;i++){ SECTIONS[i].end=(i<SECTIONS.length-1)?SECTIONS[i+1].t:SONG_END; }
 
-  var STYLE_COLOR = {BOL:"var(--bol)", RHU:"var(--rhu)", END:"var(--end)"};
-  var STYLE_DARK  = {BOL:"var(--bol-d)", RHU:"var(--rhu-d)", END:"#34301c"};
+  var STYLE_COLOR={BOL:"var(--bol)",RHU:"var(--rhu)",END:"var(--end)"};
+  var STYLE_DARK ={BOL:"var(--bol-d)",RHU:"var(--rhu-d)",END:"#34301c"};
 
-  // ---------- COUNT PATTERNS (per dance) ----------
-  // each cell: l=label, b=length in beats, q=quick(smaller). cycle = sum of b.
-  var PATTERNS = {
-    BOL: {name:"Bolero · slow 1–2",     cells:[{l:"1",b:2},{l:"2",b:2}]},
-    RHU: {name:"Rumba · quick 1 2 3 a", cells:[{l:"1",b:1},{l:"2",b:1},{l:"3",b:0.5,q:true},{l:"a",b:0.5,q:true}]},
-    END: {name:"Hold",                  cells:[{l:"✓",b:4}]}
+  // ---------- COUNT PRESETS (every pattern sums to 4 beats = 1 bar) ----------
+  // cell: l=big label, sub=beat numbers, b=length in beats, q=quick (smaller), step=is a step (clicks)
+  var PRESETS={
+    BOL:[
+      {id:"bol_sqq",name:"Bolero · Slow Quick Quick", cells:[{l:"S",sub:"1·2",b:2,step:true},{l:"Q",sub:"3",b:1,step:true},{l:"Q",sub:"4",b:1,step:true}]},
+      {id:"bol_ss", name:"Bolero · Slow Slow (1–2)",  cells:[{l:"1",sub:"1·2",b:2,step:true},{l:"2",sub:"3·4",b:2,step:true}]},
+      {id:"bol_1234",name:"Bolero · straight 1 2 3 4",cells:[{l:"1",b:1,step:true},{l:"2",b:1},{l:"3",b:1},{l:"4",b:1}]}
+    ],
+    RHU:[
+      {id:"rhu_sqq2",name:"Rumba · Slow Quick Quick (on 2)", cells:[{l:"S",sub:"2·3",b:2,step:true},{l:"Q",sub:"4",b:1,step:true},{l:"Q",sub:"1",b:1,step:true}]},
+      {id:"rhu_qqs", name:"Rumba · Quick Quick Slow (1 2 3·)",cells:[{l:"Q",sub:"1",b:1,step:true},{l:"Q",sub:"2",b:1,step:true},{l:"S",sub:"3·4",b:2,step:true}]},
+      {id:"rhu_123a",name:"Rumba · 1 2 3-a (syncopated)",     cells:[{l:"1",b:1,step:true},{l:"2",b:1,step:true},{l:"3",b:.5,q:true,step:true},{l:"a",b:.5,q:true,step:true},{l:"4",b:1}]},
+      {id:"rhu_1234",name:"Rumba · straight 1 2 3 4",         cells:[{l:"1",b:1,step:true},{l:"2",b:1},{l:"3",b:1},{l:"4",b:1}]}
+    ],
+    END:[ {id:"end",name:"Hold",cells:[{l:"✓",b:4,step:false}]} ]
   };
-  // pre-compute cumulative offsets + cycle length
-  Object.keys(PATTERNS).forEach(function(k){
-    var p=PATTERNS[k], off=0; p.cells.forEach(function(c){ c.start=off; off+=c.b; c.end=off; }); p.cycle=off;
-  });
+  // precompute offsets
+  Object.keys(PRESETS).forEach(function(st){ PRESETS[st].forEach(function(p){ var o=0; p.cells.forEach(function(c){ c._s=o; o+=c.b; c._e=o; }); p.cycle=o; }); });
 
   // ---------- STATE ----------
   var audio=document.getElementById('song');
-  var bpm=load('bpm',123), syncOffset=load('syncOffset',0);
+  var bpm=loadN('bpm',123), syncOffset=loadN('syncOffset',0);
+  var chosen={BOL:loadS('cs_BOL','bol_sqq'),RHU:loadS('cs_RHU','rhu_sqq2'),END:'end'};
   var loopOn=false, metroOn=false, countInOn=false;
   var curIdx=-1, curStyle=null, lastCell=-1, scrubbing=false;
-  var countingIn=false, countInUntil=0, resumeAt=0;
+  var ciActive=false, ciT0=0, ciResume=0, ciLast=-1;
 
-  function load(k,d){ try{var v=localStorage.getItem('wd_'+k);return v===null?d:parseFloat(v);}catch(e){return d;} }
+  function loadN(k,d){ try{var v=localStorage.getItem('wd_'+k);return v===null?d:parseFloat(v);}catch(e){return d;} }
+  function loadS(k,d){ try{var v=localStorage.getItem('wd_'+k);return v===null?d:v;}catch(e){return d;} }
   function save(k,v){ try{localStorage.setItem('wd_'+k,v);}catch(e){} }
   function fmt(s){ s=Math.max(0,s||0); var m=Math.floor(s/60),ss=Math.floor(s%60); return m+":"+(ss<10?"0":"")+ss; }
   function $(id){ return document.getElementById(id); }
   function sectionAt(t){ var idx=0; for(var i=0;i<SECTIONS.length;i++){ if(t>=SECTIONS[i].t) idx=i; } return idx; }
+  function presetFor(style){ var list=PRESETS[style]; for(var i=0;i<list.length;i++){ if(list[i].id===chosen[style]) return list[i]; } return list[0]; }
 
   // ---------- TIMELINE + JUMP GRID ----------
   var timeline=$('timeline'), jgrid=$('jgrid'), segs=[], jbtns=[];
   SECTIONS.forEach(function(s,i){
-    var seg=document.createElement('div');
-    seg.className='seg'; seg.style.flex=(s.end-s.t)+' 0 0'; seg.style.background=STYLE_COLOR[s.style];
+    var seg=document.createElement('div'); seg.className='seg'; seg.style.flex=(s.end-s.t)+' 0 0'; seg.style.background=STYLE_COLOR[s.style];
     seg.innerHTML='<div class="prog"></div><span>'+s.title+'</span>';
     seg.addEventListener('click',function(){ jumpTo(i,true); });
     timeline.appendChild(seg); segs.push(seg);
-
     var jb=document.createElement('button'); jb.className='jbtn';
-    jb.innerHTML='<span class="jt">'+(i+1)+'. '+s.title+'</span>'+
-                 '<span class="jm">'+fmt(s.t)+' – '+fmt(s.end)+'  ·  '+s.style+' · '+s.phrase+'</span>'+
-                 '<span class="jbar" style="background:'+STYLE_COLOR[s.style]+'"></span>';
+    jb.innerHTML='<span class="jt">'+(i+1)+'. '+s.title+'</span><span class="jm">'+fmt(s.t)+' – '+fmt(s.end)+'  ·  '+s.style+' · '+s.phrase+'</span><span class="jbar" style="background:'+STYLE_COLOR[s.style]+'"></span>';
     jb.addEventListener('click',function(){ jumpTo(i,true); });
     jgrid.appendChild(jb); jbtns.push(jb);
   });
 
-  // ---------- COUNT CELLS (rebuilt when dance style changes) ----------
-  var beats=$('beats'), cellEls=[];
+  // ---------- COUNT CELLS ----------
+  var beats=$('beats'), cellEls=[], cellDefs=[];
   function buildCells(style){
-    var p=PATTERNS[style]; beats.innerHTML=''; cellEls=[];
+    var p=presetFor(style); beats.innerHTML=''; cellEls=[]; cellDefs=p.cells;
     p.cells.forEach(function(c){
-      var el=document.createElement('div');
-      el.className='beat'+(c.q?' quick':''); el.textContent=c.l;
+      var el=document.createElement('div'); el.className='beat'+(c.q?' quick':'');
+      el.innerHTML='<div class="bl">'+c.l+'</div>'+(c.sub?'<div class="sub">'+c.sub+'</div>':'');
       beats.appendChild(el); cellEls.push(el);
     });
-    $('patName').textContent=p.name;
+    // selector reflects this style
+    var sel=$('countSel'); sel.innerHTML='';
+    PRESETS[style].forEach(function(pp){ var o=document.createElement('option'); o.value=pp.id; o.textContent=pp.name; if(pp.id===chosen[style]) o.selected=true; sel.appendChild(o); });
+    sel.disabled=(style==='END');
   }
   function highlightCell(idx){ for(var k=0;k<cellEls.length;k++) cellEls[k].classList.toggle('on',k===idx); }
+
+  // count-in cells (5 6 7 8)
+  function buildCI(){ beats.innerHTML=''; cellEls=[]; cellDefs=[]; ["5","6","7","8"].forEach(function(n){ var el=document.createElement('div'); el.className='beat ci'; el.innerHTML='<div class="bl">'+n+'</div>'; beats.appendChild(el); cellEls.push(el); }); }
+  function highlightCI(n){ for(var k=0;k<cellEls.length;k++) cellEls[k].classList.toggle('on',k===n); }
 
   // ---------- RENDER SECTION ----------
   function renderSection(i){
@@ -289,9 +305,7 @@
     $('styleP').textContent=s.style; $('styleP').style.background=STYLE_COLOR[s.style];
     $('phraseP').textContent=s.phrase; $('idxP').textContent=(i+1)+' / '+SECTIONS.length;
     $('title').textContent=s.title;
-    var nc=$('nowcard');
-    nc.style.background='linear-gradient(180deg, '+STYLE_DARK[s.style]+' 0%, var(--panel) 70%)';
-    nc.style.borderColor=STYLE_COLOR[s.style];
+    var nc=$('nowcard'); nc.style.background='linear-gradient(180deg, '+STYLE_DARK[s.style]+' 0%, var(--panel) 70%)'; nc.style.borderColor=STYLE_COLOR[s.style];
     var mv=$('moves'); mv.innerHTML='';
     s.moves.forEach(function(m,mi){
       var d=document.createElement('div'); var dip=/DIP/i.test(m); d.className='move'+(dip?' hl':'');
@@ -300,90 +314,62 @@
       var tx=document.createElement('span'); tx.textContent=m;
       d.appendChild(n); d.appendChild(tx); mv.appendChild(d);
     });
-    $('nextline').innerHTML = (i<SECTIONS.length-1)? 'Next: <b>'+SECTIONS[i+1].title+'</b>' : 'Next: <b>— end —</b>';
+    $('nextline').innerHTML=(i<SECTIONS.length-1)?'Next: <b>'+SECTIONS[i+1].title+'</b>':'Next: <b>— end —</b>';
     jbtns.forEach(function(j,k){ j.classList.toggle('active',k===i); });
   }
 
   // ---------- WEB AUDIO CLICK ----------
   var actx=null;
   function ensureCtx(){ if(!actx){ try{ actx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(actx&&actx.state==='suspended') actx.resume(); }
-  function click(strong){
-    if(!actx) return;
-    try{
-      var o=actx.createOscillator(), g=actx.createGain();
-      o.frequency.value=strong?1600:950; o.connect(g); g.connect(actx.destination);
-      var n=actx.currentTime; g.gain.setValueAtTime(0.0001,n);
-      g.gain.exponentialRampToValueAtTime(strong?0.5:0.26,n+0.001);
-      g.gain.exponentialRampToValueAtTime(0.0001,n+0.06);
-      o.start(n); o.stop(n+0.07);
-    }catch(e){}
-  }
+  function click(strong){ if(!actx) return; try{ var o=actx.createOscillator(),g=actx.createGain(); o.frequency.value=strong?1600:950; o.connect(g); g.connect(actx.destination); var n=actx.currentTime; g.gain.setValueAtTime(0.0001,n); g.gain.exponentialRampToValueAtTime(strong?0.5:0.26,n+0.001); g.gain.exponentialRampToValueAtTime(0.0001,n+0.06); o.start(n); o.stop(n+0.07);}catch(e){} }
 
+  // ---------- COUNT-IN ----------
+  function startCountIn(resumeTime){ ensureCtx(); ciActive=true; ciT0=performance.now(); ciResume=resumeTime; ciLast=-1; buildCI(); $('patName'); }
   // ---------- MAIN LOOP ----------
   function frame(){
-    var t=audio.currentTime;
-
-    if(countingIn){
-      var remain=countInUntil-performance.now(), beatLen=60/bpm*1000;
-      if(remain<=0){ countingIn=false; audio.currentTime=resumeAt; audio.play(); }
-      else {
-        var bi=8-Math.ceil(remain/beatLen);
-        $('countdown').textContent='in '+Math.ceil(remain/beatLen);
-        requestAnimationFrame(frame); return;
-      }
+    if(ciActive){
+      var beatMs=60/bpm*1000, el=performance.now()-ciT0, n=Math.floor(el/beatMs);
+      if(n>=4){ ciActive=false; curStyle=null; lastCell=-1; audio.currentTime=ciResume; audio.play(); }
+      else { if(n!==ciLast){ ciLast=n; highlightCI(n); click(n===3); } $('countdown').textContent='5 6 7 8 →'; requestAnimationFrame(frame); return; }
     }
 
-    var idx=sectionAt(t);
-    if(idx!==curIdx){ curIdx=idx; renderSection(idx); }
-
+    var t=audio.currentTime;
+    var idx=sectionAt(t); if(idx!==curIdx){ curIdx=idx; renderSection(idx); }
     var style=SECTIONS[curIdx].style;
     if(style!==curStyle){ curStyle=style; buildCells(style); lastCell=-1; }
 
     if(loopOn && !audio.paused){
       var s=SECTIONS[curIdx];
-      if(t>=s.end-0.03){ audio.currentTime=s.t; t=s.t; }
+      if(t>=s.end-0.03){
+        if(countInOn){ audio.pause(); startCountIn(s.t); requestAnimationFrame(frame); return; }
+        else { audio.currentTime=s.t; t=s.t; }
+      }
     }
 
-    // count within current dance pattern
-    var p=PATTERNS[style];
-    var beatPos=(t - syncOffset)/(60/bpm);
-    var pos=((beatPos % p.cycle)+p.cycle)%p.cycle;
-    var ci=0; for(var k=0;k<p.cells.length;k++){ if(pos>=p.cells[k].start && pos<p.cells[k].end){ ci=k; break; } }
-    if(ci!==lastCell){
-      lastCell=ci; highlightCell(ci);
-      if(metroOn && !audio.paused) click(ci===0);
-    }
+    // count within current pattern (cycle is 4 beats)
+    var p=presetFor(style), beatPos=(t-syncOffset)/(60/bpm), pos=((beatPos%p.cycle)+p.cycle)%p.cycle, ci=0;
+    for(var k=0;k<cellDefs.length;k++){ if(pos>=cellDefs[k]._s && pos<cellDefs[k]._e){ ci=k; break; } }
+    if(ci!==lastCell){ lastCell=ci; highlightCell(ci); if(metroOn && !audio.paused && cellDefs[ci] && cellDefs[ci].step) click(ci===0); }
 
-    var nextT=(curIdx<SECTIONS.length-1)? SECTIONS[curIdx+1].t : SONG_END;
-    var cd=nextT-t; $('countdown').textContent=(cd>0? cd.toFixed(1)+'s':'—');
-
+    var nextT=(curIdx<SECTIONS.length-1)?SECTIONS[curIdx+1].t:SONG_END, cd=nextT-t;
+    $('countdown').textContent=(cd>0?cd.toFixed(1)+'s':'—');
     $('clock').textContent=fmt(t)+' / '+fmt(audio.duration||SONG_END);
     if(!scrubbing) $('scrub').value=Math.round((t/(audio.duration||SONG_END))*1000);
     var cs=SECTIONS[curIdx];
-    for(var j=0;j<segs.length;j++){
-      segs[j].classList.toggle('active',j===curIdx);
-      var pr=segs[j].querySelector('.prog');
-      pr.style.width = (j<curIdx)?'100%':(j>curIdx)?'0%':Math.min(100,((t-cs.t)/(cs.end-cs.t))*100)+'%';
-    }
+    for(var j=0;j<segs.length;j++){ segs[j].classList.toggle('active',j===curIdx); var pr=segs[j].querySelector('.prog'); pr.style.width=(j<curIdx)?'100%':(j>curIdx)?'0%':Math.min(100,((t-cs.t)/(cs.end-cs.t))*100)+'%'; }
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 
   // ---------- TRANSPORT ----------
-  function setPlay(p){ $('playlbl').textContent=p?'Pause':'Play'; $('play').querySelector('path').setAttribute('d', p?'M6 5h4v14H6zM14 5h4v14h-4z':'M8 5v14l11-7z'); }
+  function setPlay(p){ $('playlbl').textContent=p?'Pause':'Play'; $('play').querySelector('path').setAttribute('d',p?'M6 5h4v14H6zM14 5h4v14h-4z':'M8 5v14l11-7z'); }
   audio.addEventListener('play',function(){ ensureCtx(); setPlay(true); });
-  audio.addEventListener('pause',function(){ setPlay(false); });
-
-  function togglePlay(){ if(audio.paused){ if(countInOn && !countingIn) startCountIn(); else { ensureCtx(); audio.play(); } } else audio.pause(); }
-  function startCountIn(){
-    ensureCtx(); resumeAt=audio.currentTime; countingIn=true; countInUntil=performance.now()+(60/bpm*1000*8);
-    var bl=60/bpm*1000;
-    for(var k=0;k<8;k++){ (function(kk){ setTimeout(function(){ if(countingIn){ click(kk%4===0); } }, kk*bl); })(k); }
-  }
-  function jumpTo(i,playIt){ curIdx=-1; lastCell=-1; countingIn=false; audio.currentTime=SECTIONS[i].t; renderSection(i); if(playIt){ if(countInOn) startCountIn(); else { ensureCtx(); audio.play(); } } }
+  audio.addEventListener('pause',function(){ if(!ciActive) setPlay(false); });
+  function togglePlay(){ if(ciActive) return; if(audio.paused){ if(countInOn) startCountIn(audio.currentTime); else { ensureCtx(); audio.play(); } } else audio.pause(); }
+  function jumpTo(i,playIt){ ciActive=false; curIdx=-1; lastCell=-1; audio.currentTime=SECTIONS[i].t; renderSection(i); if(playIt){ if(countInOn) startCountIn(SECTIONS[i].t); else { ensureCtx(); audio.play(); } } }
 
   $('play').addEventListener('click',togglePlay);
-  $('restart').addEventListener('click',function(){ countingIn=false; audio.currentTime=0; curIdx=-1; });
+  $('restart').addEventListener('click',function(){ ciActive=false; audio.currentTime=0; curIdx=-1; });
   $('back5').addEventListener('click',function(){ audio.currentTime=Math.max(0,audio.currentTime-5); });
   $('fwd5').addEventListener('click',function(){ audio.currentTime=Math.min((audio.duration||SONG_END),audio.currentTime+5); });
   $('prevSec').addEventListener('click',function(){ var i=sectionAt(audio.currentTime); if(audio.currentTime-SECTIONS[i].t<1.0) i=Math.max(0,i-1); jumpTo(i,!audio.paused); });
@@ -393,15 +379,13 @@
   $('metroBtn').addEventListener('click',function(){ metroOn=!metroOn; $('metroState').textContent=metroOn?'On':'Off'; this.classList.toggle('on',metroOn); if(metroOn){ ensureCtx(); click(true);} });
   $('countInBtn').addEventListener('click',function(){ countInOn=!countInOn; $('ciState').textContent=countInOn?'On':'Off'; this.classList.toggle('on',countInOn); });
 
+  $('countSel').addEventListener('change',function(){ var st=SECTIONS[curIdx]?SECTIONS[curIdx].style:'BOL'; chosen[st]=this.value; save('cs_'+st,this.value); curStyle=null; lastCell=-1; });
+
   function setBpm(v){ bpm=Math.max(50,Math.min(200,Math.round(v))); $('bpm').textContent=bpm; save('bpm',bpm); }
   $('bpmUp').addEventListener('click',function(){ setBpm(bpm+1); });
   $('bpmDown').addEventListener('click',function(){ setBpm(bpm-1); });
-
   var taps=[];
-  $('tap').addEventListener('click',function(){
-    var now=performance.now(); taps.push(now); taps=taps.filter(function(x){return now-x<3000;});
-    if(taps.length>=2){ var d=[]; for(var k=1;k<taps.length;k++) d.push(taps[k]-taps[k-1]); var avg=d.reduce(function(a,b){return a+b;},0)/d.length; setBpm(60000/avg); }
-  });
+  $('tap').addEventListener('click',function(){ var now=performance.now(); taps.push(now); taps=taps.filter(function(x){return now-x<3000;}); if(taps.length>=2){ var d=[]; for(var k=1;k<taps.length;k++) d.push(taps[k]-taps[k-1]); var avg=d.reduce(function(a,b){return a+b;},0)/d.length; setBpm(60000/avg);} });
   $('sync').addEventListener('click',function(){ syncOffset=audio.currentTime; save('syncOffset',syncOffset); lastCell=-1; });
   $('syncStart').addEventListener('click',function(){ syncOffset=0; save('syncOffset',0); lastCell=-1; });
 
